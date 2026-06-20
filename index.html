@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Message For You ❤️</title>
+  <!-- Google Fonts for Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Confetti CDN Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Floating Heart Particle Canvas Background -->
+  <canvas id="heart-canvas"></canvas>
+
+  <!-- Audio element for background romantic track -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Sound Toggle Button -->
+  <button id="sound-toggle" class="sound-btn hidden" aria-label="Toggle Sound">
+    <span class="sound-icon">🔇</span>
+  </button>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- CARD 1: The Interactive Envelope/Intro -->
+    <section id="card-intro" class="card active">
+      <div class="envelope-wrapper">
+        <div class="envelope" id="envelope">
+          <div class="flap"></div>
+          <div class="pocket"></div>
+          <div class="letter">
+            <h2 id="intro-title">Hey there! 👋</h2>
+            <p id="intro-message">Loading message...</p>
+          </div>
+          <div class="heart-seal" id="open-btn">
+            <span>❤️</span>
+          </div>
+        </div>
+      </div>
+      <p class="click-instruction">Click the heart to open the letter ✨</p>
+    </section>
+
+    <!-- CARD 2: The Slideshow of Reasons -->
+    <section id="card-slideshow" class="card">
+      <div class="glass-card">
+        <div class="card-header">
+          <span class="slide-badge">Memory <span id="current-slide-num">1</span>/<span id="total-slides-num">4</span></span>
+        </div>
+        <div class="slide-content-wrapper">
+          <div class="slide-emoji" id="slide-emoji">✨</div>
+          <h2 class="slide-title" id="slide-title">Slide Title</h2>
+          <p class="slide-text" id="slide-text">Slide text description goes here.</p>
+        </div>
+        <div class="slideshow-controls">
+          <button id="prev-slide-btn" class="nav-btn" disabled>👈 Back</button>
+          <div class="slide-indicators" id="slide-indicators"></div>
+          <button id="next-slide-btn" class="nav-btn">Next 👉</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD 3: The Proposal Screen -->
+    <section id="card-proposal" class="card">
+      <div class="glass-card proposal-box">
+        <div class="proposal-emoji-container">
+          <div class="propose-emoji">🌹</div>
+        </div>
+        <h1 class="proposal-title" id="proposal-question">Will you make me the happiest person and go out with me? 🌹</h1>
+        
+        <!-- Pleading / dialog bubble for dodging button response -->
+        <div id="pleading-bubble" class="pleading-bubble hidden">
+          <p id="pleading-text">Are you sure? 🥺</p>
+        </div>
+
+        <div class="proposal-buttons">
+          <button id="yes-btn" class="proposal-btn yes-style">Yes! ❤️</button>
+          <button id="no-btn" class="proposal-btn no-style">No 😢</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD 4: Celebration/Success Screen -->
+    <section id="card-success" class="card">
+      <div class="glass-card success-box">
+        <div class="success-illustration">
+          <img id="success-gif" src="" alt="Love Celebration">
+        </div>
+        <h1 class="success-title" id="success-title">Yay! You said YES! 🎉💖</h1>
+        <p class="success-text" id="success-message">My heart is literally doing cartwheels right now! You've made me so happy. I can't wait for our first date! 🥰</p>
+        
+        <button id="whatsapp-btn" class="whatsapp-btn hidden">
+          Send confirmation via WhatsApp 💬
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Configuration and Logic Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
